@@ -5,21 +5,16 @@
 
 
 
-<<<<<<<<CC3 dev web
-Partie 1
+
+## Partie 1 : serveur HTTP natif Node.js
 
 
 
 
-### Question 1.1
+
+### Question 1.1  donner la liste des en-têtes de la réponse HTTP du serveur.
+
 En-têtes de la réponse HTTP du serveur :
-
-
-
-CC3 dev web
-Partie 1
-question 1.1 :
-
 
 
 connection keep-alive
@@ -30,7 +25,7 @@ transfer-encoding chunked
 
 ---
 
-### Question 1.2
+### Question 1.2 donner la liste des en-têtes qui ont changé depuis la version précédente.
 En-têtes après ajout JSON :
 
 connection keep-alive
@@ -43,14 +38,14 @@ keep-alive timeout=5
 
 
 
-### Question 1.3
+### Question 1.3  que contient la réponse reçue par le client ?
 
 Le fichier **index.html** n'as pas etait trouver par le serveur,  
 donc le client reçoit un message d’erreur.
 
 
 
-### Question 1.4
+### Question 1.4 quelle est l’erreur affichée dans la console ? Retrouver sur https://nodejs.org/api le code d’erreur affiché.
 
 la console va afficher :
 
@@ -64,8 +59,21 @@ Error: ENOENT: no such file or directory, open 'E:\2025 info\semestre 4\dev web\
 
 il s’agit du code erreur : **ENOENT**
  
-
-
+### Question 1.5 donner le code de requestListener() modifié avec gestion d’erreur en async/await.
+/**
+async function requestListener(_request, response) {
+  try {
+    const contents = await fs.readFile("index.html", "utf8");
+    response.setHeader("Content-Type", "text/html");
+    response.writeHead(200);
+    response.end(contents);
+  } catch (error) {
+    console.error(error);
+    response.writeHead(500, { "Content-Type": "text/plain" });
+    response.end("Erreur 500 : Impossible de charger la page demandee.");
+  }
+}
+**/
 ### Question 1.6
 
 Cette commande a ajouter dans le `package.json`:
