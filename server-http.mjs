@@ -72,38 +72,37 @@ async function requestListener(_request, response) {
 async function requestListener(request, response) {
   response.setHeader("Content-Type", "text/html");
   try {
-    const urlParts = request.url.split("/"); 
-    const firstLevel = urlParts[1];
-    switch (firstLevel) {
-      case "":
-      case "index.html": {
-        const contents = await fs.readFile("index.html", "utf8");
+    const contents = await fs.readFile("index.html", "utf8");
+    const urlRequest = request.url.split("/");
+    switch (urlRequest[1]) {
+      case "index.html":
+      case "": {
         response.writeHead(200);
         return response.end(contents);
       }
-      case "random": {
-        const nb = parseInt(urlParts[2]);
-        if (isNaN(nb) || nb <= 0) {
-          response.writeHead(400);
-          return response.end(`<html><p>Nombre invalide !</p></html>`);
-        }
-        const numbers = [];
-        for (let i = 0; i < nb; i++) {
-          numbers.push(Math.floor(Math.random() * 101));
-        }
-        let template;
-        try {
-          template = await fs.readFile("random.html", "utf8");
-        } catch {
-          template = "<html><p>{{numbers}}</p></html>"; 
-        }
-        const content = template.replace("{{numbers}}", numbers.join(", "));
+      case "random.html": {
         response.writeHead(200);
-        return response.end(content);
+        return response.end(`<html><p>${Math.floor(100 * Math.random())}</p></html>`);
       }
-      default:
+      case "random": {
+        if (urlRequest.length === 3) {
+          const nb = Number(urlRequest[2]);
+          let htmlContents = "<html>";
+          for (let index = 0; index < nb; index++)
+            htmlContents += `${Math.floor(100 * Math.random())}<br>`;
+          htmlContents += "</html>";
+
+          response.writeHead(200);
+          return response.end(htmlContents);
+        } else {
+          response.writeHead(400);
+          return response.end(`<html><p>400: BAD REQUEST</p></html>`);
+        }
+      }
+      default: {
         response.writeHead(404);
         return response.end(`<html><p>404: NOT FOUND</p></html>`);
+      }
     }
   } catch (error) {
     console.error(error);
