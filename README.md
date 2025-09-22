@@ -16,24 +16,24 @@
 
 En-têtes de la réponse HTTP du serveur :
 
-
+```
 connection keep-alive
 date Fri, 19 Sep 2025 22:53:41 GMT
 keep-alive timeout=5
 transfer-encoding chunked
+```
 
 
----
 
 ### Question 1.2 donner la liste des en-têtes qui ont changé depuis la version précédente.
 En-têtes après ajout JSON :
-
+```
 connection keep-alive
 content-length 20
 content-type application/json
 date  Sun, 21 Sep 2025 03:46:04 GMT
 keep-alive timeout=5
-
+```
 
 
 
@@ -48,7 +48,7 @@ donc le client reçoit un message d’erreur.
 ### Question 1.4 quelle est l’erreur affichée dans la console ? Retrouver sur https://nodejs.org/api le code d’erreur affiché.
 
 la console va afficher :
-
+```
 Error: ENOENT: no such file or directory, open 'E:\2025 info\semestre 4\dev web\devweb-tp5\index.html'
     at async open (node:internal/fs/promises:642:25)
     at async Object.readFile (node:internal/fs/promises:1279:14) 
@@ -56,11 +56,11 @@ Error: ENOENT: no such file or directory, open 'E:\2025 info\semestre 4\dev web\
   code: 'ENOENT',
   syscall: 'open',
   path: 'E:\\2025 info\\semestre 4\\dev web\\devweb-tp5\\index.html'
-
+```
 il s’agit du code erreur : **ENOENT**
  
 ### Question 1.5 donner le code de requestListener() modifié avec gestion d’erreur en async/await.
-/**
+```
 async function requestListener(_request, response) {
   try {
     const contents = await fs.readFile("index.html", "utf8");
@@ -73,13 +73,13 @@ async function requestListener(_request, response) {
     response.end("Erreur 500 : Impossible de charger la page demandee.");
   }
 }
-**/
+```
 ### Question 1.6 indiquer ce que cette commande a modifié dans votre projet.
 
 
 
 Cette commande a ajouter dans le `package.json`:
-'''
+```
  "dependencies": {
     "cross-env": "^10.0.0"
   },
@@ -87,7 +87,7 @@ Cette commande a ajouter dans le `package.json`:
     "nodemon": "^3.1.10"
   }
 
-'''
+```
  
 
 ### Question 1.7 quelles sont les différences entre les scripts http-dev et http-prod ?
