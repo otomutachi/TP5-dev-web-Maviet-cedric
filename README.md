@@ -98,7 +98,9 @@ la différence entre un http-dev et http-prod est :
 http-dev va démarrer le serv  en mode developement ça veut dire que le serv va se relancer si je change mon programme et affiche les détail pour expliquer la situation 
 
 Alors que http-prod va démarrer un serveur en mode production lui il n'affiche pas de messages de debug et ne se relance pas tous seul.
-"""
+
+
+```
 [nodemon] 3.1.10
 [nodemon] to restart at any time, enter `rs`
 [nodemon] watching path(s): *.*
@@ -106,15 +108,17 @@ Alors que http-prod va démarrer un serveur en mode production lui il n'affiche 
 [nodemon] starting `node server-http.mjs`
 Server is running on http://localhost:8000
 NODE_ENV = development
-"""
-"""
+```
+
+```
 E:\2025 info\semestre 4\dev web\devweb-tp5>npm run http-prod
 
 > devweb-tp5@1.0.0 http-prod
 > cross-env NODE_ENV=production node server-http.mjs
 
 Server is running on http://localhost:8000
-"""
+```
+
 ### Question 1.8 donner les codes HTTP reçus par votre navigateur pour chacune des quatre pages précédentes.
 
 http://localhost:8000/index.html :
