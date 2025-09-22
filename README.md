@@ -2,21 +2,20 @@
 
 ## CC3 Développement Web
 
-<<<<<<< HEAD
 
 
-CC3 dev web
+
+<<<<<<<<CC3 dev web
 Partie 1
 
+
+
+
 ### Question 1.1
 En-têtes de la réponse HTTP du serveur :
 
-=======
-### Question 1.1
-En-têtes de la réponse HTTP du serveur :
 
-<<<<<<< HEAD
-=======
+
 CC3 dev web
 Partie 1
 question 1.1 :
