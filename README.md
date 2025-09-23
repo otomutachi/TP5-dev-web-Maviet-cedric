@@ -120,13 +120,15 @@ Server is running on http://localhost:8000
 ```
 
 ### Question 1.8 donner les codes HTTP reçus par votre navigateur pour chacune des quatre pages précédentes.
-```
-http://localhost:8000/index.html : 200
+
+```http://localhost:8000/index.html``` : 200
  
-http://localhost:8000/random.html : 200
+```http://localhost:8000/random.html``` : 200
 
-http://localhost:8000/ : 404
+```http://localhost:8000/``` : 404
 
-http://localhost:8000/dont-exist :404
+```http://localhost:8000/dont-exist``` :404
 
-```
+## Partie 2 : framework Express
+
+### Question 2.1 donner les URL des documentations de chacun des modules installés par la commande précédente.
