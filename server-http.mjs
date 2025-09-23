@@ -1,4 +1,5 @@
 import http from "node:http";
+import path from "node:path";
 
 const host = "localhost";
 const port = 8000;
@@ -72,42 +73,40 @@ async function requestListener(_request, response) {
 async function requestListener(request, response) {
   response.setHeader("Content-Type", "text/html");
   try {
-    const contents = await fs.readFile("index.html", "utf8");
-    const urlRequest = request.url.split("/");
-    switch (urlRequest[1]) {
-      case "index.html":
-      case "": {
-        response.writeHead(200);
-        return response.end(contents);
-      }
-      case "random.html": {
-        response.writeHead(200);
-        return response.end(`<html><p>${Math.floor(100 * Math.random())}</p></html>`);
-      }
-      case "random": {
-        if (urlRequest.length === 3) {
-          const nb = Number(urlRequest[2]);
-          let htmlContents = "<html>";
-          for (let index = 0; index < nb; index++)
-            htmlContents += `${Math.floor(100 * Math.random())}<br>`;
-          htmlContents += "</html>";
-
-          response.writeHead(200);
-          return response.end(htmlContents);
-        } else {
-          response.writeHead(400);
-          return response.end(`<html><p>400: BAD REQUEST</p></html>`);
+    const parsedUrl = new URL(request.url, `http://${host}:${port}`);
+    const pathname = parsedUrl.pathname.slice(1);
+    const segments = pathname.split("/").filter(Boolean);
+    if (pathname === "" || pathname === "index.html") {
+      const filePath = path.resolve("index.html");
+      const content = await fs.readFile(filePath, "utf8");
+      response.writeHead(200);
+      response.end(content);
+    } else if (pathname === "random.html") {
+      const randomNumber = Math.floor(Math.random() * 100);
+      response.writeHead(200);
+      response.end(`<html><body>Random: <b>${randomNumber}</b></body></html>`);
+    } else if (segments[0] === "random" && segments.length === 2) {
+      const count = Number.parseInt(segments[1], 10);
+      if (Number.isNaN(count) || count <= 0) {
+        response.writeHead(400);
+        response.end("<html><body><p>400: Invalid number in request</p></body></html>");
+      } else {
+        let htmlOutput = "<html><body><div>";
+        for (let index = 0; index < count; index++) {
+          htmlOutput += `<span>${Math.floor(Math.random() * 100)}</span><br>`;
         }
+        htmlOutput += "</div></body></html>";
+        response.writeHead(200);
+        response.end(htmlOutput);
       }
-      default: {
-        response.writeHead(404);
-        return response.end(`<html><p>404: NOT FOUND</p></html>`);
-      }
+    } else {
+      response.writeHead(404);
+      response.end("<html><body><p>404: Not Found</p></body></html>");
     }
   } catch (error) {
-    console.error(error);
+    console.error("Server failure:", error);
     response.writeHead(500);
-    return response.end(`<html><p>500: INTERNAL SERVER ERROR</p></html>`);
+    response.end("<html><body><p>500: Internal Server Error</p></body></html>");
   }
 }
 
