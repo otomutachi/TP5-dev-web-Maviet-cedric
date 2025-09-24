@@ -10,10 +10,18 @@ if (app.get("env") === "development") app.use(morgan("dev"));
 
 app.use(express.static("static"));
 
-app.get("/random/:nb", async function (request, response, next) {
-  const length = request.params.nb;
+app.get("/random.html", async function (request, response, _next) {
+  const randomNumber = Math.floor(100 * Math.random());
+  return response.send(`<html><ul><li>${randomNumber}</li></ul></html>`);
+});
+
+app.get("/random/:nb", async function (request, response, _next) {
+  const length = Number.parseInt(request.params.nb, 10);
+  if (Number.isNaN(length)) {
+    return response.status(400).send("<html><body><p>400: Invalid number in request</p></body></html>");
+  }
   const contents = Array.from({ length })
-    .map((_) => `<li>${Math.floor(100 * Math.random())}</li>`)
+    .map(() => `<li>${Math.floor(100 * Math.random())}</li>`)
     .join("\n");
   return response.send(`<html><ul>${contents}</ul></html>`);
 });
