@@ -61,7 +61,7 @@ il s’agit du code erreur : **ENOENT**
  
 ### Question 1.5 donner le code de requestListener() modifié avec gestion d’erreur en async/await.
 
-![alt text](images/image-0.png)
+
 ```
 async function requestListener(_request, response) {
   try {
