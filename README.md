@@ -144,15 +144,16 @@ morgan: https://www.npmjs.com/package/morgan
 ### Question 2.2 vérifier que les trois routes fonctionnent.
 
 
-![alt text](image-2.png)
+### Question 2.2 Vérifier que les trois routes fonctionnent
 
----
+#### Route http://localhost:8000/
+![Capture de la route /](images/image-2.png)
 
-![alt text](image.png)
+#### Route http://localhost:8000/random/5
+![Capture de la route /random/5](images/image.png)
 
----
-
-![alt text](image-1.png)
+#### Route http://localhost:8000/random.html
+![Capture de la route /random.html](images/image-1.png)
 
 
 ### Question 2.3 lister les en-têtes des réponses fournies par Express. Lesquelles sont nouvelles par rapport au serveur HTTP ?
