@@ -249,9 +249,10 @@ lorsque on fait pour la première fois CRTL+R son code http est 200 puis apres a
 CTRL+R son code http est devenue 304 tandis que pour CRTL+shift+R c est 200 qui recharge la page
 
 ### question 2.7
-
+en mode developement :
 ![alt text](images/image-6.png)
 ![alt text](images/image-3.png)
 
+en mode production :
 ![alt text](images/image-4.png)
 ![alt text](images/image-5.png)
