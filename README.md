@@ -138,5 +138,9 @@ la commande précedente donne :
 express : https://expressjs.com/en/guide/routing.html 
 http-errors  :https://www.npmjs.com/package/http-errors 
 loglevel : https://www.npmjs.com/package/loglevel
-morgan:: https://www.npmjs.com/package/morgan
+morgan: https://www.npmjs.com/package/morgan
+
+
+### Question 2.2 vérifier que les trois routes fonctionnent.
+
 
