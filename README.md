@@ -49,6 +49,8 @@ donc le client ne reçoit pas de reponse du serveur.
 
 
 ![alt text](images/image-0.png)
+
+
 la console va afficher :
 ```
 Error: ENOENT: no such file or directory, open 'E:\2025 info\semestre 4\dev web\devweb-tp5\index.html'
