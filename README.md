@@ -211,10 +211,11 @@ x-content-type-options
 ```
 
 ### Question 2.4 quand l’événement listening est-il déclenché ?
-
+```
 [nodemon] starting `node server-express.mjs`
 File file:///E:/2025%20info/semestre%204/dev%20web/devweb-tp5/server-express.mjs executed.
 HTTP listening on http://::1:8000 with mode 'development'
+```
 
 L'evénement ```listening``` se déclenche lorsque le serveur Express  commence a écouter le port spécifiés et se lie a l'adresse comme pour le cas de ```localhost:8000``` qui a accepter la requetes http .
 
