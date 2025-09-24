@@ -72,7 +72,7 @@ async function requestListener(_request, response) {
   } catch (error) {
     console.error(error);
     response.writeHead(500, { "Content-Type": "text/plain" });
-    response.end("Erreur 500 : Impossible de charger la page demandee.");
+    response.end("Erreur 500 : INTERNAL SERVER ERROR.");
   }
 }
 ```
