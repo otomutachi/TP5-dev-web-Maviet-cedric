@@ -220,3 +220,30 @@ L'evénement ```listening``` se déclenche lorsque le serveur Express  commence 
 
 
 ### Question 2.5 indiquer quelle est l’option (activée par défaut) qui redirige``` / ```vers ```/index.html ```?
+
+C'est l'option ```index``` du middleware express.static qui a permis de rediriger automatiquement les requêtes vers ```/index.html```. Cette option est activée par défaut et sa valeur est définie comme ```index.html```.
+
+
+### Question 2.6 visiter la page d’accueil puis rafraichir (Ctrl+R) et ensuite forcer le rafraichissement (Ctrl+Shift+R). Quels sont les codes HTTP sur le fichier style.css ? Justifier.
+
+
+lorsque on fait CTRL+R pour la premiere fois :
+```
+GET / 200 18.318 ms - 179
+GET /style.css 200 3.186 ms - 81
+```
+apres la premiere fois  CTRL+R :
+```
+GET / 304 1.455 ms - -
+GET /style.css 304 4.427 ms - -
+```
+si on fait CTRL+shift+R :
+```
+GET / 200 1.230 ms - 179
+GET /style.css 200 2.512 ms - 81
+GET /favicon.ico 404 0.948 ms - 150
+```
+pour CRTL+R le navigateur utilise un cache
+lorsque on fait pour la première fois CRTL+R son code http est 200 puis apres avoir refait
+CTRL+R son code http est devenue 304 tandis que pour CRTL+shift+R c est 200 qui recharge la page
+
