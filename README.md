@@ -146,13 +146,13 @@ morgan: https://www.npmjs.com/package/morgan
 
 ### Question 2.2 Vérifier que les trois routes fonctionnent
 
-#### Route http://localhost:8000/
+####  http://localhost:8000/
 ![Capture de la route /](images/image-2.png)
 
-#### Route http://localhost:8000/random/5
+####  http://localhost:8000/random/5
 ![Capture de la route /random/5](images/image.png)
 
-#### Route http://localhost:8000/random.html
+####  http://localhost:8000/random.html
 ![Capture de la route /random.html](images/image-1.png)
 
 
