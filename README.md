@@ -47,6 +47,8 @@ donc le client ne reçoit pas de reponse du serveur.
 
 ### Question 1.4 quelle est l’erreur affichée dans la console ? Retrouver sur https://nodejs.org/api le code d’erreur affiché.
 
+
+![alt text](images/image-0.png)
 la console va afficher :
 ```
 Error: ENOENT: no such file or directory, open 'E:\2025 info\semestre 4\dev web\devweb-tp5\index.html'
