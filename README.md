@@ -41,7 +41,7 @@ keep-alive timeout=5
 ### Question 1.3  que contient la réponse reçue par le client ?
 
 Le fichier **index.html** n'as pas etait trouver par le serveur,  
-donc le client reçoit un message d’erreur.
+donc le client ne reçoit pas de reponse du serveur.
 
 
 
