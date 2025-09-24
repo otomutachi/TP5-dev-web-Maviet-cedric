@@ -144,3 +144,80 @@ morgan: https://www.npmjs.com/package/morgan
 ### Question 2.2 vérifier que les trois routes fonctionnent.
 
 
+![alt text](image-2.png)
+
+---
+
+![alt text](image.png)
+
+---
+
+![alt text](image-1.png)
+
+
+### Question 2.3 lister les en-têtes des réponses fournies par Express. Lesquelles sont nouvelles par rapport au serveur HTTP ?
+
+
+http://localhost:8000/
+
+```
+accept-ranges       bytes
+cache-control       public, max-age=0
+connection          keep-alive
+content-length      133
+content-type        text/html; charset=utf-8
+date                Wed, 24 Sep 2025 03:51:13 GMT
+etag                W/"85-19979d16d51"
+keep-alive          timeout=5
+last-modified       Wed, 24 Sep 2025 03:43:12 GMT
+x-powered-by        Express
+```
+
+http://localhost:8000/random/5  :
+
+```
+connection        keep-alive
+content-length    80
+content-type      text/html; charset=utf-8
+date              Wed, 24 Sep 2025 03:56:41 GMT
+etag              W/"50-0ctZ+nKPrajvQfYKOBmr8JDKCSU"
+keep-alive        timeout=5
+x-powered-by      Express
+```
+
+http://localhost:8000/random.html :
+
+
+```
+connection:               keep-alive
+content-length:           150
+
+content-security-policy:  default-src 'none'
+content-type:             text/html; charset=utf-8
+date:                     Wed, 24 Sep 2025 03:59:42 GMT
+keep-alive:               timeout=5
+x-content-type-options:   nosniff
+x-powered-by :           Express
+```
+
+les nouveaux entete sont  :
+```
+X-Powered-By, 
+etag, 
+cache-control,
+accept-ranges ,
+last-modified,
+content-security-policy  
+x-content-type-options
+```
+
+### Question 2.4 quand l’événement listening est-il déclenché ?
+
+[nodemon] starting `node server-express.mjs`
+File file:///E:/2025%20info/semestre%204/dev%20web/devweb-tp5/server-express.mjs executed.
+HTTP listening on http://::1:8000 with mode 'development'
+
+L'evénement ```listening``` se déclenche lorsque le serveur Express  commence a écouter le port spécifiés et se lie a l'adresse comme pour le cas de ```localhost:8000``` qui a accepter la requetes http .
+
+
+### Question 2.5 indiquer quelle est l’option (activée par défaut) qui redirige``` / ```vers ```/index.html ```?
