@@ -250,8 +250,8 @@ CTRL+R son code http est devenue 304 tandis que pour CRTL+shift+R c est 200 qui 
 
 ### question 2.7
 
-![alt text](image-6.png)
-![alt text](image-3.png)
+![alt text](images/image-6.png)
+![alt text](images/image-3.png)
 
-![alt text](image-4.png)
-![alt text](image-5.png)
+![alt text](images/image-4.png)
+![alt text](images/image-5.png)
