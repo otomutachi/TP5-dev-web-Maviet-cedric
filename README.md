@@ -160,46 +160,16 @@ morgan: https://www.npmjs.com/package/morgan
 
 
 http://localhost:8000/
+![alt text](images/image.png)
 
-```
-accept-ranges       bytes
-cache-control       public, max-age=0
-connection          keep-alive
-content-length      133
-content-type        text/html; charset=utf-8
-date                Wed, 24 Sep 2025 03:51:13 GMT
-etag                W/"85-19979d16d51"
-keep-alive          timeout=5
-last-modified       Wed, 24 Sep 2025 03:43:12 GMT
-x-powered-by        Express
-```
 
 http://localhost:8000/random/5  :
+![alt text](images/image-7.png)
 
-```
-connection        keep-alive
-content-length    80
-content-type      text/html; charset=utf-8
-date              Wed, 24 Sep 2025 03:56:41 GMT
-etag              W/"50-0ctZ+nKPrajvQfYKOBmr8JDKCSU"
-keep-alive        timeout=5
-x-powered-by      Express
-```
 
 http://localhost:8000/random.html :
+![alt text](images/image.png)
 
-
-```
-connection:               keep-alive
-content-length:           150
-
-content-security-policy:  default-src 'none'
-content-type:             text/html; charset=utf-8
-date:                     Wed, 24 Sep 2025 03:59:42 GMT
-keep-alive:               timeout=5
-x-content-type-options:   nosniff
-x-powered-by :           Express
-```
 
 les nouveaux entete sont  :
 ```
