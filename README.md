@@ -141,8 +141,6 @@ loglevel : https://www.npmjs.com/package/loglevel
 morgan: https://www.npmjs.com/package/morgan
 
 
-### Question 2.2 vérifier que les trois routes fonctionnent.
-
 
 ### Question 2.2 Vérifier que les trois routes fonctionnent
 
