@@ -248,7 +248,7 @@ pour CRTL+R le navigateur utilise un cache
 lorsque on fait pour la première fois CRTL+R son code http est 200 puis apres avoir refait
 CTRL+R son code http est devenue 304 tandis que pour CRTL+shift+R c est 200 qui recharge la page
 
-### question 2.7
+### question 2.7  vérifier que l’affichage change bien entre le mode production et le mode development.
 en mode developement :
 ![alt text](images/image-6.png)
 ![alt text](images/image-3.png)
