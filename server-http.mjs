@@ -42,7 +42,7 @@ async function requestListener(_request, response) {
   } catch (error) {
     console.error(error);
     response.writeHead(500, { "Content-Type": "text/plain" });
-    response.end("Erreur 500 : Impossible de charger la page demandee.");
+    response.end("Erreur 500 : INTERNAL SERVER ERROR.");
   }
 }
 **/
@@ -89,7 +89,7 @@ async function requestListener(request, response) {
       const count = Number.parseInt(segments[1], 10);
       if (Number.isNaN(count) || count <= 0) {
         response.writeHead(400);
-        response.end("<html><body><p>400: Invalid number in request</p></body></html>");
+        response.end("<html><body><p>400: numero invalid erreur</p></body></html>");
       } else {
         let htmlOutput = "<html><body><div>";
         for (let index = 0; index < count; index++) {
@@ -101,12 +101,12 @@ async function requestListener(request, response) {
       }
     } else {
       response.writeHead(404);
-      response.end("<html><body><p>404: Not Found</p></body></html>");
+      response.end("<html><body><p>404: pas trouvé</p></body></html>");
     }
   } catch (error) {
-    console.error("Server failure:", error);
+    console.error("le serveur a echouer :", error);
     response.writeHead(500);
-    response.end("<html><body><p>500: Internal Server Error</p></body></html>");
+    response.end("<html><body><p>500: INTERNAL SERVER ERROR</p></body></html>");
   }
 }
 
