@@ -132,3 +132,11 @@ Server is running on http://localhost:8000
 ## Partie 2 : framework Express
 
 ### Question 2.1 donner les URL des documentations de chacun des modules installés par la commande précédente.
+
+la commande précedente donne :
+
+express :``` https://expressjs.com/en/guide/routing.html ```
+http-errors  :```https://www.npmjs.com/package/http-errors ```
+loglevel :``` https://www.npmjs.com/package/loglevel``` 
+morgan::``` https://www.npmjs.com/package/morgan```
+
