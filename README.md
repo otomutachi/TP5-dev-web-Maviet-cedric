@@ -248,3 +248,10 @@ pour CRTL+R le navigateur utilise un cache
 lorsque on fait pour la première fois CRTL+R son code http est 200 puis apres avoir refait
 CTRL+R son code http est devenue 304 tandis que pour CRTL+shift+R c est 200 qui recharge la page
 
+### question 2.7
+
+![alt text](image-6.png)
+![alt text](image-3.png)
+
+![alt text](image-4.png)
+![alt text](image-5.png)
